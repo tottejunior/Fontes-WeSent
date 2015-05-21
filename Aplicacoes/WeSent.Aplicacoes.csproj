@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{826EE9F5-759F-4773-AF25-B8AC77EDBC57}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Aplicacoes</RootNamespace>
+    <AssemblyName>Aplicacoes</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector">
+      <HintPath>..\packages\SimpleInjector.2.8.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Base\AplicacaoBase.cs" />
+    <Compile Include="App_Start\MecanismoDeMapeamento.cs" />
+    <Compile Include="Mapeamento\WeSentProfile.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Base\" />
+    <Folder Include="App_Start\" />
+    <Folder Include="Mapeamento\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeSent.Entidades\WeSent.Entidades.csproj">
+      <Project>{F2795EAB-D75F-41E0-B0F0-8ED0EF7A23D9}</Project>
+      <Name>WeSent.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeSent.INegocios\WeSent.INegocios.csproj">
+      <Project>{03681B89-363B-49A8-8BCB-0EB0F075F519}</Project>
+      <Name>WeSent.INegocios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IAplicacoes\WeSent.IAplicacoes.csproj">
+      <Project>{DA92ED9D-328C-425E-84E4-A74BC31ECF46}</Project>
+      <Name>WeSent.IAplicacoes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeSent.Modelos\WeSent.Modelos.csproj">
+      <Project>{4C286C38-CC9C-45CB-8966-1D9B78B7B11B}</Project>
+      <Name>WeSent.Modelos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeSent.Modelos\WeSent.Comum\WeSent.Comum.csproj">
+      <Project>{5AC13B41-E92F-45E0-807F-70BAB2CA79C1}</Project>
+      <Name>WeSent.Comum</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

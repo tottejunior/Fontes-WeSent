@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA92ED9D-328C-425E-84E4-A74BC31ECF46}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IAplicacoes</RootNamespace>
+    <AssemblyName>IAplicacoes</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Base\IAplicacaoBase.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\WeSent.Entidades\WeSent.Entidades.csproj">
+      <Project>{F2795EAB-D75F-41E0-B0F0-8ED0EF7A23D9}</Project>
+      <Name>WeSent.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeSent.Modelos\WeSent.Comum\WeSent.Comum.csproj">
+      <Project>{5AC13B41-E92F-45E0-807F-70BAB2CA79C1}</Project>
+      <Name>WeSent.Comum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeSent.Modelos\WeSent.Modelos.csproj">
+      <Project>{4C286C38-CC9C-45CB-8966-1D9B78B7B11B}</Project>
+      <Name>WeSent.Modelos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Base\" />
+  </ItemGroup>
+</Project>
